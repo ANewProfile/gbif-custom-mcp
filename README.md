@@ -47,8 +47,10 @@ Google Cloud project and generate a service account key.
 prompt and see Claude uses the MCP server (it will ask you for permission) to
 obtain the dataset schema.
 
-```Can you query GBIF database and get me schema for the occurrence table? It's
-called bigquery-public-data.gbif.occurrences```
+```
+Can you query GBIF database and get me schema for the occurrence table? It's
+called bigquery-public-data.gbif.occurrences
+```
 
 
 ### Custom MCP server
@@ -63,3 +65,8 @@ uv run mcp install gbif-context.py
 3. Restart Claude Desktop, you should now be able to choose the GBIF context
 MCP server and attach the context.
 
+4. The following prompt should work now
+
+```
+Can you query GBIF dataset to find count of mosquitos in the US in 2022?
+```
