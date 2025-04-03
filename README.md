@@ -53,7 +53,7 @@ called bigquery-public-data.gbif.occurrences
 ```
 
 
-### Custom MCP server
+### MCP server to provide context about the GBIF dataset
 
 1. Clone this repo, https://github.com/ANewProfile/gbif-custom-mcp
 2. Run the following to update your Claude desktop configuration file
@@ -62,11 +62,16 @@ called bigquery-public-data.gbif.occurrences
 uv run mcp install gbif-context.py
 ```
 
-3. Restart Claude Desktop, you should now be able to choose the GBIF context
-MCP server and attach the context.
-
-4. The following prompt should work now
+3. Restart Claude Desktop, you should now be able to choose to "Attach from
+MCP" and select "gbif-context". Afterward, the folllowing prompt shoud work,
+and specifically if you look at the SQL, there is now a filter for the
+`occurrencestatus` field.
 
 ```
 Can you query GBIF dataset to find count of mosquitos in the US in 2022?
 ```
+
+4. Depends on how `uv` is installed on your OS and your path settings, you may
+need to explicitly specify the path to `uv` in the Claude desktop configuration
+file.
+
